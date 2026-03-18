@@ -55,12 +55,6 @@ npm run dev
 - email: admin@russell-port.local
 - mdp: Admin1234!
 
-Si le login ne marche pas, relancer:
-
-```bash
-npm run seed
-```
-
 ## Routes principales (resume)
 
 ### Auth
