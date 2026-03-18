@@ -1,0 +1,26 @@
+<%- include('../partials/head') %>
+<%- include('../partials/nav') %>
+
+<main class="container grid-two">
+  <section class="panel">
+    <h1>Catway <%= catway.catwayNumber %></h1>
+    <p><strong>Type:</strong> <%= catway.catwayType %></p>
+
+    <form method="post" action="/app/catways/<%= catway.catwayNumber %>?_method=PUT" class="stack">
+      <label>
+        Etat
+        <textarea name="catwayState" required minlength="3"><%= catway.catwayState %></textarea>
+      </label>
+      <button class="btn" type="submit">Mettre a jour l'etat</button>
+    </form>
+  </section>
+
+  <section class="panel danger">
+    <h2>Suppression</h2>
+    <form method="post" action="/app/catways/<%= catway.catwayNumber %>?_method=DELETE">
+      <button class="btn btn-danger" type="submit">Supprimer ce catway</button>
+    </form>
+  </section>
+</main>
+
+<%- include('../partials/footer') %>

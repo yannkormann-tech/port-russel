@@ -1,0 +1,30 @@
+<%- include('../partials/head') %>
+<main class="hero">
+  <section class="hero-left">
+    <h1>Gestion des reservations de catways</h1>
+    <p>
+      Application privee de la capitainerie de Russell pour gerer les catways,
+      reservations et utilisateurs.
+    </p>
+    <a class="btn btn-outline" href="/api-docs">Consulter la documentation API</a>
+  </section>
+
+  <section class="panel">
+    <h2>Connexion</h2>
+    <% if (error) { %>
+      <p class="error"><%= error %></p>
+    <% } %>
+    <form method="post" action="/login" class="stack">
+      <label>
+        Email
+        <input type="email" name="email" required />
+      </label>
+      <label>
+        Mot de passe
+        <input type="password" name="password" required minlength="8" />
+      </label>
+      <button class="btn" type="submit">Se connecter</button>
+    </form>
+  </section>
+</main>
+<%- include('../partials/footer') %>

@@ -1,0 +1,32 @@
+<%- include('../partials/head') %>
+<%- include('../partials/nav') %>
+
+<main class="container grid-two">
+  <section class="panel">
+    <h1>Utilisateur <%= user.email %></h1>
+    <form method="post" action="/app/users/<%= encodeURIComponent(user.email) %>?_method=PUT" class="stack">
+      <label>
+        Username
+        <input type="text" name="username" value="<%= user.username %>" required minlength="3" />
+      </label>
+      <label>
+        Email
+        <input type="email" name="email" value="<%= user.email %>" required />
+      </label>
+      <label>
+        Nouveau mot de passe
+        <input type="password" name="password" minlength="8" />
+      </label>
+      <button class="btn" type="submit">Mettre a jour</button>
+    </form>
+  </section>
+
+  <section class="panel danger">
+    <h2>Suppression</h2>
+    <form method="post" action="/app/users/<%= encodeURIComponent(user.email) %>?_method=DELETE">
+      <button class="btn btn-danger" type="submit">Supprimer cet utilisateur</button>
+    </form>
+  </section>
+</main>
+
+<%- include('../partials/footer') %>

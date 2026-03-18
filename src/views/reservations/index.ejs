@@ -1,0 +1,61 @@
+<%- include('../partials/head') %>
+<%- include('../partials/nav') %>
+
+<main class="container grid-two">
+  <section class="panel">
+    <h1>Reservations</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Catway</th>
+          <th>Client</th>
+          <th>Bateau</th>
+          <th>Debut</th>
+          <th>Fin</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% reservations.forEach((reservation) => { %>
+          <tr>
+            <td><%= reservation.catwayNumber %></td>
+            <td><%= reservation.clientName %></td>
+            <td><%= reservation.boatName %></td>
+            <td><%= new Date(reservation.startDate).toLocaleDateString('fr-FR') %></td>
+            <td><%= new Date(reservation.endDate).toLocaleDateString('fr-FR') %></td>
+            <td><a href="/app/reservations/<%= reservation._id %>">Details</a></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="panel">
+    <h2>Creer une reservation</h2>
+    <form method="post" action="/app/reservations" class="stack">
+      <label>
+        Numero du catway
+        <input type="number" name="catwayNumber" min="1" required />
+      </label>
+      <label>
+        Nom du client
+        <input type="text" name="clientName" required minlength="2" />
+      </label>
+      <label>
+        Nom du bateau
+        <input type="text" name="boatName" required minlength="2" />
+      </label>
+      <label>
+        Date de debut
+        <input type="date" name="startDate" required />
+      </label>
+      <label>
+        Date de fin
+        <input type="date" name="endDate" required />
+      </label>
+      <button class="btn" type="submit">Creer</button>
+    </form>
+  </section>
+</main>
+
+<%- include('../partials/footer') %>

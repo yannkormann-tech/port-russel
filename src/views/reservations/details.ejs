@@ -1,0 +1,41 @@
+<%- include('../partials/head') %>
+<%- include('../partials/nav') %>
+
+<main class="container grid-two">
+  <section class="panel">
+    <h1>Reservation <%= reservation._id %></h1>
+
+    <form method="post" action="/app/reservations/<%= reservation._id %>?_method=PUT" class="stack">
+      <label>
+        Numero du catway
+        <input type="number" name="catwayNumber" min="1" value="<%= reservation.catwayNumber %>" required />
+      </label>
+      <label>
+        Nom du client
+        <input type="text" name="clientName" value="<%= reservation.clientName %>" required minlength="2" />
+      </label>
+      <label>
+        Nom du bateau
+        <input type="text" name="boatName" value="<%= reservation.boatName %>" required minlength="2" />
+      </label>
+      <label>
+        Date de debut
+        <input type="date" name="startDate" value="<%= new Date(reservation.startDate).toISOString().slice(0,10) %>" required />
+      </label>
+      <label>
+        Date de fin
+        <input type="date" name="endDate" value="<%= new Date(reservation.endDate).toISOString().slice(0,10) %>" required />
+      </label>
+      <button class="btn" type="submit">Mettre a jour</button>
+    </form>
+  </section>
+
+  <section class="panel danger">
+    <h2>Suppression</h2>
+    <form method="post" action="/app/reservations/<%= reservation._id %>?_method=DELETE">
+      <button class="btn btn-danger" type="submit">Supprimer cette reservation</button>
+    </form>
+  </section>
+</main>
+
+<%- include('../partials/footer') %>

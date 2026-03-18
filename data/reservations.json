@@ -1,0 +1,23 @@
+[
+  {
+    "catwayNumber": 1,
+    "clientName": "Alice Martin",
+    "boatName": "Lune Bleue",
+    "startDate": "2026-03-10",
+    "endDate": "2026-03-22"
+  },
+  {
+    "catwayNumber": 2,
+    "clientName": "Theo Garnier",
+    "boatName": "Vent du Nord",
+    "startDate": "2026-03-14",
+    "endDate": "2026-03-20"
+  },
+  {
+    "catwayNumber": 3,
+    "clientName": "Mila Roche",
+    "boatName": "Aquarelle",
+    "startDate": "2026-03-25",
+    "endDate": "2026-04-03"
+  }
+]

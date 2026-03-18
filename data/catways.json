@@ -1,0 +1,17 @@
+[
+  {
+    "catwayNumber": 1,
+    "catwayType": "long",
+    "catwayState": "Passerelle en bon etat, revision recente."
+  },
+  {
+    "catwayNumber": 2,
+    "catwayType": "short",
+    "catwayState": "Garde-corps a verifier, acces autorise."
+  },
+  {
+    "catwayNumber": 3,
+    "catwayType": "long",
+    "catwayState": "Surface stable, peinture a planifier."
+  }
+]

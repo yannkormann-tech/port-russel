@@ -1,0 +1,52 @@
+<%- include('../partials/head') %>
+<%- include('../partials/nav') %>
+
+<main class="container grid-two">
+  <section class="panel">
+    <h1>Catways</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Numero</th>
+          <th>Type</th>
+          <th>Etat</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% catways.forEach((catway) => { %>
+          <tr>
+            <td><%= catway.catwayNumber %></td>
+            <td><%= catway.catwayType %></td>
+            <td><%= catway.catwayState %></td>
+            <td><a href="/app/catways/<%= catway.catwayNumber %>">Details</a></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="panel">
+    <h2>Creer un catway</h2>
+    <form method="post" action="/app/catways" class="stack">
+      <label>
+        Numero
+        <input type="number" name="catwayNumber" min="1" required />
+      </label>
+      <label>
+        Type
+        <select name="catwayType" required>
+          <option value="long">long</option>
+          <option value="short">short</option>
+        </select>
+      </label>
+      <label>
+        Etat
+        <textarea name="catwayState" required minlength="3"></textarea>
+      </label>
+      <button class="btn" type="submit">Creer</button>
+    </form>
+  </section>
+</main>
+
+<%- include('../partials/footer') %>
